@@ -1,0 +1,21 @@
+Comandi rapidi — Java da terminale
+
+1. Compilare ed eseguire (forma classica)
+   javac Hello21.java        (produce Hello21.class)
+   java Hello21              (esegue, senza .class)
+
+2. Eseguire direttamente il sorgente (dal JDK 11)
+   java Hello25.java         (compila in memoria ed esegue)
+
+3. Verifica versione
+   java -version
+   javac -version
+
+4. Pulire i .class
+   rm *.class                (macOS / Linux)
+   del *.class               (Windows)
+
+Note:
+- javac non stampa nulla se la compilazione va a buon fine
+- a java si passa il nome della classe, non del file
+- java File.java non produce il .class su disco
