@@ -1,10 +1,10 @@
-Comandi rapidi — Java da terminale
+Comandi rapidi Java terminale
 
 1. Compilare ed eseguire (forma classica)
    javac Hello21.java        (produce Hello21.class)
    java Hello21              (esegue, senza .class)
 
-2. Eseguire direttamente il sorgente (dal JDK 11)
+2. Eseguire direttamente il sorgente (dal JDK 11 in poi)
    java Hello25.java         (compila in memoria ed esegue)
 
 3. Verifica versione
