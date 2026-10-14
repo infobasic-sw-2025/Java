@@ -97,7 +97,7 @@ Crea `Factorial.java` con due versioni del fattoriale:
 - `static long fattorialeIterativo(int n)` — con un ciclo
 - `static long fattorialeRicorsivo(int n)` — il metodo chiama se stesso
 
-Confronta i risultati per n da 1 a 15. Per quale valore di n il risultato diventa negativo? Perché?
+Confronta i risultati per n da 1 a 25. Per quale valore di n il risultato diventa negativo per la prima volta? Perché? I valori successivi sono corretti anche quando tornano positivi?
 
 ### Esercizio 11 · Caccia all'errore
 
