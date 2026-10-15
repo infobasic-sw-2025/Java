@@ -61,16 +61,7 @@ Crea `Power.java` con un metodo `static long potenza(int base, int esponente)` c
 3^5 = 243
 ```
 
-### Esercizio 7 · Overloading: la somma
-
-Crea `SumOverload.java` con tre versioni del metodo `somma`:
-- `static int somma(int a, int b)`
-- `static int somma(int a, int b, int c)`
-- `static double somma(double a, double b)`
-
-Chiamale tutte dal main e verifica che il compilatore scelga quella giusta.
-
-### Esercizio 8 · Il numero primo
+### Esercizio 7 · Il numero primo
 
 Crea `PrimeCheck.java` con un metodo `static boolean isPrimo(int n)` che restituisce `true` se il numero è primo. Usalo per stampare i numeri primi tra 2 e 50.
 
@@ -82,7 +73,7 @@ Crea `PrimeCheck.java` con un metodo `static boolean isPrimo(int n)` che restitu
 
 ## Livello 3 · Avanzato
 
-### Esercizio 9 · Il miniconvertitore
+### Esercizio 8 · Il miniconvertitore
 
 Crea `TimeFormatter.java` con un metodo `static String formattaTempo(int totaleSecondi)` che restituisce una stringa nel formato `"Xh Ym Zs"`. Un secondo metodo `static int tempoInSecondi(int ore, int minuti, int secondi)` fa la conversione inversa.
 
@@ -91,15 +82,13 @@ Crea `TimeFormatter.java` con un metodo `static String formattaTempo(int totaleS
 1h 30m 0s = 5400 secondi
 ```
 
-### Esercizio 10 · Il fattoriale
+### Esercizio 9 · Il fattoriale
 
-Crea `Factorial.java` con due versioni del fattoriale:
-- `static long fattorialeIterativo(int n)` — con un ciclo
-- `static long fattorialeRicorsivo(int n)` — il metodo chiama se stesso
+Crea `Factorial.java` con un metodo `static long fattoriale(int n)` che calcola il fattoriale con un ciclo.
 
-Confronta i risultati per n da 1 a 25. Per quale valore di n il risultato diventa negativo per la prima volta? Perché? I valori successivi sono corretti anche quando tornano positivi?
+Stampa i risultati per n da 1 a 25. Per quale valore di n il risultato diventa negativo per la prima volta? Perché? I valori successivi sono corretti anche quando tornano positivi?
 
-### Esercizio 11 · Caccia all'errore
+### Esercizio 10 · Caccia all'errore
 
 Copia questo codice in `FixMethods.java`. Non compila: correggilo leggendo i messaggi di javac, un errore alla volta.
 
@@ -128,7 +117,7 @@ public class FixMethods {
 }
 ```
 
-### Esercizio 12 · Refactoring
+### Esercizio 11 · Refactoring
 
 Questo programma funziona ma ha codice ripetuto. Copia in `Refactor.java` e riscrivilo usando dei metodi.
 
