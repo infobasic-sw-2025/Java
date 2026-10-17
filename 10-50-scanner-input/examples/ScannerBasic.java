@@ -2,7 +2,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * Live coding 1/2 — Scanner e input base.
+ * Esempi 1/2 — Scanner e input base.
  *
  * Argomenti:
  *  - creare un oggetto Scanner

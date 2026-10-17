@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Live coding 2/2 — Validazione input e menu testuale.
+ * Esempi 2/2 — Validazione input e menu testuale.
  *
  * Argomenti:
  *  - hasNextInt(): controllare il tipo prima di leggere
