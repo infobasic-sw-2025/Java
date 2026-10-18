@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Ex02SumTwoNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Primo numero: ");
+        int a = scanner.nextInt();
+        System.out.print("Secondo numero: ");
+        int b = scanner.nextInt();
+
+        System.out.println("Somma: " + (a + b));
+    }
+}

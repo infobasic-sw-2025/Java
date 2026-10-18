@@ -8,7 +8,7 @@ Non abbiamo ancora visto come leggere un valore da tastiera: i dati sono scritti
 
 ## Esercizio 1 · Pari o dispari
 
-Crea `EvenOdd.java`. Data `int numero = -7;`, stampa se il numero è positivo, negativo o zero, e poi se è pari o dispari.
+Crea `Ex01EvenOdd.java`. Data `int numero = -7;`, stampa se il numero è positivo, negativo o zero, e poi se è pari o dispari.
 
 ```
 -7 è negativo
@@ -21,7 +21,7 @@ Prova anche con `0`, `12` e `-4`. Attenzione: quanto vale `-7 % 2`?
 
 ## Esercizio 2 · Il giudizio
 
-Crea `Grades.java`. Dato `int voto = 7;`, stampa il giudizio con una catena di `else if`:
+Crea `Ex02Grades.java`. Dato `int voto = 7;`, stampa il giudizio con una catena di `else if`:
 
 | Voto | Giudizio |
 |---|---|
@@ -42,7 +42,7 @@ Esito: promosso
 
 ## Esercizio 3 · Il biglietto del cinema
 
-Crea `TicketPrice.java`. Date `int eta = 22;` e `boolean studente = true;`, calcola il prezzo del biglietto:
+Crea `Ex03TicketPrice.java`. Date `int eta = 22;` e `boolean studente = true;`, calcola il prezzo del biglietto:
 - sotto i 6 anni è gratuito;
 - sotto i 18 anni o dai 65 in su costa 6 euro;
 - per gli studenti fino a 25 anni costa 8 euro;
@@ -60,7 +60,7 @@ Prova con 4, 15, 30, 70 anni e con `studente` a `false`. L'ordine delle condizio
 
 ## Esercizio 4 · Giorni della settimana
 
-Crea `DayOfWeek.java`. Data `int giorno = 6;` (1 è lunedì, 7 è domenica), stampa se è un giorno feriale o del weekend, scrivendo lo stesso `switch` in tre modi:
+Crea `Ex04DayOfWeek.java`. Data `int giorno = 6;` (1 è lunedì, 7 è domenica), stampa se è un giorno feriale o del weekend, scrivendo lo stesso `switch` in tre modi:
 1. nella forma classica, con i casi raggruppati e `break`;
 2. con la freccia;
 3. come espressione, salvando il risultato in una `String`.
@@ -79,7 +79,7 @@ Con `giorno = 9` tutte e tre le versioni devono stampare `non valido`.
 
 ## Esercizio 5 · La calcolatrice
 
-Crea `Calculator.java`. Date `int a = 17;`, `int b = 5;` e `char operazione = '/';`, calcola il risultato con uno `switch` come espressione su `operazione`. Le operazioni sono `+`, `-`, `*` e `/`; la divisione è intera e mostra anche il resto.
+Crea `Ex05Calculator.java`. Date `int a = 17;`, `int b = 5;` e `char operazione = '/';`, calcola il risultato con uno `switch` come espressione su `operazione`. Le operazioni sono `+`, `-`, `*` e `/`; la divisione è intera e mostra anche il resto.
 
 ```
 17 / 5 = 3 con resto 2
@@ -91,7 +91,7 @@ Il caso della divisione deve controllare `b`: se vale 0, il risultato è il test
 
 ## Esercizio 6 · La somma da 1 a n
 
-Crea `SumToN.java`. Data `int n = 100;`, calcola la somma dei numeri da 1 a `n` due volte: una con un `for` e una con un `while`. Poi confrontala con la formula `n * (n + 1) / 2`.
+Crea `Ex06SumToN.java`. Data `int n = 100;`, calcola la somma dei numeri da 1 a `n` due volte: una con un `for` e una con un `while`. Poi confrontala con la formula `n * (n + 1) / 2`.
 
 ```
 Somma da 1 a 100 (for): 5050
@@ -105,7 +105,7 @@ Formula n * (n + 1) / 2: 5050
 
 ## Esercizio 7 · La tabellina
 
-Crea `MultiplicationTable.java`. Data `int n = 7;`, stampa la tabellina di `n` fino a 10.
+Crea `Ex07MultiplicationTable.java`. Data `int n = 7;`, stampa la tabellina di `n` fino a 10.
 
 ```
 7 x 1 = 7
@@ -126,7 +126,7 @@ Crea `MultiplicationTable.java`. Data `int n = 7;`, stampa la tabellina di `n` f
 
 ## Esercizio 8 · Le cifre di un numero
 
-Crea `Digits.java`. Dato `int numero = 708351;`, con un solo ciclo calcola:
+Crea `Ex08Digits.java`. Dato `int numero = 708351;`, con un solo ciclo calcola:
 - quante cifre ha;
 - la somma delle cifre;
 - la cifra più grande e la più piccola;
@@ -146,7 +146,7 @@ Suggerimento: `% 10` dà l'ultima cifra, `/ 10` la toglie. Con `numero = 0` il r
 
 ## Esercizio 9 · Break e continue
 
-Crea `BreakContinue.java` con quattro cicli:
+Crea `Ex09BreakContinue.java` con quattro cicli:
 1. stampa i numeri da 1 a 10, ma fermati quando arrivi al 7;
 2. stampa i numeri da 1 a 10 saltando il 5;
 3. con `while (true)` trova il primo multiplo di 7 maggiore di 100;
@@ -163,7 +163,7 @@ Primo multiplo di 7 dopo 100: 105
 
 ## Esercizio 10 · Numeri primi
 
-Crea `PrimeNumber.java`. Dato `int numero = 97;`, stampa se è primo: un numero primo è maggiore di 1 e divisibile solo per 1 e per sé stesso. Appena trovi un divisore, esci dal ciclo con `break`.
+Crea `Ex10PrimeNumber.java`. Dato `int numero = 97;`, stampa se è primo: un numero primo è maggiore di 1 e divisibile solo per 1 e per sé stesso. Appena trovi un divisore, esci dal ciclo con `break`.
 
 ```
 97 è primo
@@ -181,7 +181,7 @@ Prova con 1, 2, 91 e 100.
 
 ## Esercizio 11 · Figure con gli asterischi
 
-Crea `Shapes.java`. Data `int lato = 4;`, stampa con cicli annidati quattro figure, separate da una riga vuota:
+Crea `Ex11Shapes.java`. Data `int lato = 4;`, stampa con cicli annidati quattro figure, separate da una riga vuota:
 
 ```
 ********
@@ -211,7 +211,7 @@ Nel quadrato vuoto l'asterisco va solo sul bordo: prima riga, ultima riga, prima
 
 ## Esercizio 12 · La sequenza di Collatz (sfida)
 
-Crea `Collatz.java`. Si parte da un numero `n`: se è pari si divide per 2, se è dispari si moltiplica per 3 e si aggiunge 1. Si ripete finché si arriva a 1. Con `int n = 27;` conta i passi e trova il valore più alto raggiunto.
+Crea `Ex12Collatz.java`. Si parte da un numero `n`: se è pari si divide per 2, se è dispari si moltiplica per 3 e si aggiunge 1. Si ripete finché si arriva a 1. Con `int n = 27;` conta i passi e trova il valore più alto raggiunto.
 
 ```
 27 arriva a 1 in 111 passi, valore massimo 9232

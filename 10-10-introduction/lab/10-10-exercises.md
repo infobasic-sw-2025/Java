@@ -6,7 +6,7 @@ Lavora da terminale con il JDK 25 installato sulla tua macchina: controlla con `
 
 ## Esercizio 1 · Il tuo nome, forma classica
 
-Crea il file `HelloName.java` con la forma classica di un programma Java (quella usata fino a Java 21 ma valida anche in Java 25): una classe `HelloName` con il metodo `public static void main(String[] args)`.
+Crea il file `Ex01HelloName.java` con la forma classica di un programma Java (quella usata fino a Java 21 ma valida anche in Java 25): una classe `Ex01HelloName` con il metodo `public static void main(String[] args)`.
 
 Il programma deve:
 - salvare il tuo nome in una variabile di tipo `String`;
@@ -16,26 +16,26 @@ Il programma deve:
 Ciao, Davide!
 ```
 
-Compila con `javac HelloName.java` ed esegui con `java HelloName`.
+Compila con `javac Ex01HelloName.java` ed esegui con `java Ex01HelloName`.
 
 ---
 
 ## Esercizio 2 · Il tuo nome, forma compatta di Java 25
 
-Riscrivi lo stesso programma nel file `HelloName25.java`, questa volta nella forma compatta di Java 25:
+Riscrivi lo stesso programma nel file `Ex02HelloName25.java`, questa volta nella forma compatta di Java 25:
 `void main()` al posto della classe e `IO.println` al posto di `System.out.println`.
 
-Esegui direttamente il sorgente con `java HelloName25.java`.
+Esegui direttamente il sorgente con `java Ex02HelloName25.java`.
 
 Rispondi:
 1. Quali parole della forma classica sono sparite?
-2. Dopo l'esecuzione, nella cartella c'è un file `HelloName25.class`? Perché?
+2. Dopo l'esecuzione, nella cartella c'è un file `Ex02HelloName25.class`? Perché?
 
 ---
 
 ## Esercizio 3 · La tabellina del 2
 
-Crea il file `TimesTable.java`, con la forma classica, che stampi la tabellina del 2, una riga per ogni
+Crea il file `Ex03TimesTable.java`, con la forma classica, che stampi la tabellina del 2, una riga per ogni
 moltiplicazione:
 
 ```
@@ -60,7 +60,7 @@ Poi eseguila. Il risultato è quello che ti aspettavi? Come la correggi per otte
 
 ## Esercizio 4 · print senza ln
 
-Copia `TimesTable.java` in un nuovo file `PrintWithoutLn.java`, rinomina la classe in `PrintWithoutLn` e
+Copia `Ex03TimesTable.java` in un nuovo file `Ex04PrintWithoutLn.java`, rinomina la classe in `Ex04PrintWithoutLn` e
 sostituisci `System.out.println` con `System.out.print` nelle prime tre righe (togli le altre).
 
 Prima di eseguire, scrivi su un foglio cosa ti aspetti di vedere. Poi esegui e rispondi:

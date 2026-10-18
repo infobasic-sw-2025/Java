@@ -21,12 +21,12 @@ Attenzione: `javac` non mostra sempre tutti gli errori in una volta. Prima contr
 
 ### 10.60.10 — Errori di compilazione
 
-Crea `Compilazione.java`.
+Crea `Ex01Compilazione.java`.
 
 **Consegna**: Il seguente programma non compila. Contiene 3 errori di compilazione: individuali e correggili. Alla prima compilazione `javac` ne segnala solo 2: perché? Il terzo compare quando hai corretto i primi due.
 
 ```java
-public class Compilazione {
+public class Ex01Compilazione {
     public static void main(String[] args) {
         int numero = "10";
         System.out.println("Numero: " + numero)
@@ -39,14 +39,14 @@ public class Compilazione {
 
 ### 10.60.20 — Errori di runtime
 
-Crea `RuntimeErrore.java`.
+Crea `Ex02RuntimeErrore.java`.
 
 **Consegna**: Il seguente programma compila correttamente, ma si interrompe durante l'esecuzione. Spiega quale eccezione viene lanciata e perché, poi correggi il programma in modo che stampi `Lettere del nome: 5`.
 
 `nome.length()` restituisce il numero di caratteri della stringa `nome`: ad esempio, `"Mario".length()` vale 5.
 
 ```java
-public class RuntimeErrore {
+public class Ex02RuntimeErrore {
     public static void main(String[] args) {
         String nome = null;
         System.out.println("Lettere del nome: " + nome.length());
@@ -58,12 +58,12 @@ public class RuntimeErrore {
 
 ### 10.60.30 — Errore logico semplice
 
-Crea `AreaRettangolo.java`.
+Crea `Ex03AreaRettangolo.java`.
 
 **Consegna**: Il programma dovrebbe calcolare l'area di un rettangolo con base 5 e altezza 10, ma il risultato è sbagliato. Trova e correggi l'errore (risultato atteso: `Area: 50`).
 
 ```java
-public class AreaRettangolo {
+public class Ex03AreaRettangolo {
     public static void main(String[] args) {
         int base = 5;
         int altezza = 10;
@@ -77,12 +77,12 @@ public class AreaRettangolo {
 
 ### 10.60.40 — Leggere lo stack trace
 
-Crea `StackTrace.java`.
+Crea `Ex04StackTrace.java`.
 
 **Consegna**: Esegui il seguente programma. Leggi lo stack trace prodotto e rispondi: quale eccezione viene lanciata? In quale riga? Qual è la causa? Poi correggi il programma: se il divisore è 0, deve stampare `Impossibile dividere per zero` invece di interrompersi.
 
 ```java
-public class StackTrace {
+public class Ex04StackTrace {
     public static void main(String[] args) {
         int a = 50;
         int b = 0;
@@ -98,12 +98,12 @@ public class StackTrace {
 
 ### 10.60.50 — Debugging con println
 
-Crea `NumeriPari.java`.
+Crea `Ex05NumeriPari.java`.
 
 **Consegna**: Il programma dovrebbe stampare i numeri pari da 2 a 10 (uno per riga), ma non funziona come previsto. Aggiungi stampe di debug con `System.out.println` (ad esempio il valore di `i` e di `i % 2` a ogni giro) per capire cosa non va, poi correggi l'errore e togli le stampe di debug.
 
 ```java
-public class NumeriPari {
+public class Ex05NumeriPari {
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) {
             if (i % 2 == 1) {
@@ -118,12 +118,12 @@ public class NumeriPari {
 
 ### 10.60.60 — La media sbagliata
 
-Crea `MediaVoti.java`.
+Crea `Ex06MediaVoti.java`.
 
 **Consegna**: Il programma calcola la media di tre voti, ma stampa `Media: 27.0`. La media corretta di 28, 30 e 25 è 83 / 3 = 27,67 circa: Java stampa `Media: 27.666666666666668`. Usa println per trovare il problema e correggilo.
 
 ```java
-public class MediaVoti {
+public class Ex06MediaVoti {
     public static void main(String[] args) {
         int voto1 = 28;
         int voto2 = 30;
@@ -138,12 +138,12 @@ public class MediaVoti {
 
 ### 10.60.70 — Bug multipli
 
-Crea `Perimetro.java`.
+Crea `Ex07Perimetro.java`.
 
 **Consegna**: Il seguente programma contiene 3 errori: due di compilazione e uno logico. Trovali tutti e correggili. Il programma dovrebbe stampare il perimetro di un rettangolo con base 6 e altezza 4 (risultato atteso: `Perimetro: 20`).
 
 ```java
-public class Perimetro {
+public class Ex07Perimetro {
     public static void main(String[] args) {
         int base = 6;
         int alteza = 4
@@ -157,12 +157,12 @@ public class Perimetro {
 
 ### 10.60.80 — Somma con off-by-one
 
-Crea `Somma.java`.
+Crea `Ex08Somma.java`.
 
 **Consegna**: Il programma dovrebbe calcolare la somma dei numeri da 1 a 10 (risultato atteso: `Somma: 55`), ma stampa `Somma: 45`. Trova l'errore, spiegalo e correggilo.
 
 ```java
-public class Somma {
+public class Ex08Somma {
     public static void main(String[] args) {
         int somma = 0;
         for (int i = 0; i < 10; i++) {
@@ -179,7 +179,7 @@ public class Somma {
 
 ### 10.60.90 — Caccia ai bug nel ciclo
 
-Crea `Massimo.java`.
+Crea `Ex09Massimo.java`.
 
 **Consegna**: Il programma chiede 5 numeri interi e dovrebbe stampare il più grande. Compila ed esegue senza errori, ma per certi input il risultato è sbagliato. Trova e correggi l'errore logico.
 
@@ -188,7 +188,7 @@ Prova prima con `3 7 2 9 4` (risultato atteso: `Massimo: 9`), poi con `-5 -2 -8 
 ```java
 import java.util.Scanner;
 
-public class Massimo {
+public class Ex09Massimo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int max = 0;
@@ -212,7 +212,7 @@ Suggerimento: cosa succede se tutti i numeri inseriti sono negativi? Da quale va
 
 ### 10.60.100 — Conteggio vocali
 
-Crea `ContaVocali.java`.
+Crea `Ex10ContaVocali.java`.
 
 **Consegna**: Il programma dovrebbe contare le vocali (maiuscole e minuscole) nella stringa `"Buongiorno Italia"`: il risultato atteso è `Vocali: 9`. Contiene due errori: uno di runtime e uno logico. Trovali e correggili.
 
@@ -222,7 +222,7 @@ Il programma usa due metodi delle stringhe:
 - `testo.charAt(i)` restituisce il carattere in posizione `i`. Le posizioni partono da 0, quindi vanno da `0` a `testo.length() - 1`.
 
 ```java
-public class ContaVocali {
+public class Ex10ContaVocali {
     public static void main(String[] args) {
         String testo = "Buongiorno Italia";
         int contatore = 0;
@@ -243,7 +243,7 @@ public class ContaVocali {
 
 ### 10.60.110 — Programma completo da correggere
 
-Crea `MediaInterattiva.java`.
+Crea `Ex11MediaInterattiva.java`.
 
 **Consegna**: Il seguente programma dovrebbe chiedere 5 voti all'utente, calcolarne la media e dire se è sufficiente (media `>= 18`). Contiene 4 errori. Trovali, classificali (compilazione, runtime o logico) e correggili uno alla volta.
 
@@ -252,7 +252,7 @@ Per verificare la correzione inserisci i voti 28, 30, 25, 27 e 29: il programma 
 ```java
 import java.util.Scanner;
 
-public class MediaInterattiva {
+public class Ex11MediaInterattiva {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int somma = 0;
@@ -280,9 +280,9 @@ public class MediaInterattiva {
 
 ### 10.60.120 — Scrivi, rompi, ripara
 
-Crea `FabbricaBug.java`.
+Crea `Ex12FabbricaBug.java`.
 
-**Consegna**: Scrivi un programma `FabbricaBug` che:
+**Consegna**: Scrivi un programma `Ex12FabbricaBug` che:
 
 1. dichiari `int n = 5;`
 2. calcoli con un ciclo `for` la somma dei numeri da 1 a `n`

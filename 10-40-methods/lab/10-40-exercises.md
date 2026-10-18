@@ -8,7 +8,7 @@ Ogni metodo è `static` e va scritto nella stessa classe del `main` (per il mome
 
 ### Esercizio 1 · Saluto personalizzato
 
-Crea `Greeting.java` con un metodo `static void saluta(String nome)` che stampa `Ciao, <nome>!`. Chiamalo dal main con tre nomi diversi.
+Crea `Ex01Greeting.java` con un metodo `static void saluta(String nome)` che stampa `Ciao, <nome>!`. Chiamalo dal main con tre nomi diversi.
 
 ```
 Ciao, Alice!
@@ -18,7 +18,7 @@ Ciao, Carlo!
 
 ### Esercizio 2 · L'area del rettangolo
 
-Crea `RectangleArea.java` con un metodo `static int area(int base, int altezza)` che restituisce l'area. Chiamalo dal main con due rettangoli diversi e stampa i risultati.
+Crea `Ex02RectangleArea.java` con un metodo `static int area(int base, int altezza)` che restituisce l'area. Chiamalo dal main con due rettangoli diversi e stampa i risultati.
 
 ```
 Area 1: 28
@@ -27,7 +27,7 @@ Area 2: 45
 
 ### Esercizio 3 · Pari o dispari
 
-Crea `EvenOdd.java` con un metodo `static boolean isPari(int n)` che restituisce `true` se il numero è pari. Usalo dal main per stampare, per i numeri da 1 a 10, se sono pari o dispari.
+Crea `Ex03EvenOdd.java` con un metodo `static boolean isPari(int n)` che restituisce `true` se il numero è pari. Usalo dal main per stampare, per i numeri da 1 a 10, se sono pari o dispari.
 
 ```
 1 è dispari
@@ -38,7 +38,7 @@ Crea `EvenOdd.java` con un metodo `static boolean isPari(int n)` che restituisce
 
 ### Esercizio 4 · Il massimo tra due numeri
 
-Crea `MaxOfTwo.java` con un metodo `static int massimo(int a, int b)` che restituisce il maggiore. Non usare `Math.max`: scrivi la logica con un `if`.
+Crea `Ex04MaxOfTwo.java` con un metodo `static int massimo(int a, int b)` che restituisce il maggiore. Non usare `Math.max`: scrivi la logica con un `if`.
 
 ---
 
@@ -46,7 +46,7 @@ Crea `MaxOfTwo.java` con un metodo `static int massimo(int a, int b)` che restit
 
 ### Esercizio 5 · Conversione di temperatura
 
-Crea `TemperatureMethods.java` con due metodi:
+Crea `Ex05TemperatureMethods.java` con due metodi:
 - `static double celsiusToFahrenheit(double c)` — formula: `c * 9.0 / 5 + 32`
 - `static double fahrenheitToCelsius(double f)` — formula: `(f - 32) * 5.0 / 9`
 
@@ -54,7 +54,7 @@ Converti 0, 100 e 37 gradi Celsius in Fahrenheit, e 32, 212 e 98.6 Fahrenheit in
 
 ### Esercizio 6 · Il metodo potenza
 
-Crea `Power.java` con un metodo `static long potenza(int base, int esponente)` che calcola la potenza usando un ciclo `for`, senza usare `Math.pow`. Prova con `potenza(2, 10)` e `potenza(3, 5)`.
+Crea `Ex06Power.java` con un metodo `static long potenza(int base, int esponente)` che calcola la potenza usando un ciclo `for`, senza usare `Math.pow`. Prova con `potenza(2, 10)` e `potenza(3, 5)`.
 
 ```
 2^10 = 1024
@@ -63,7 +63,7 @@ Crea `Power.java` con un metodo `static long potenza(int base, int esponente)` c
 
 ### Esercizio 7 · Il numero primo
 
-Crea `PrimeCheck.java` con un metodo `static boolean isPrimo(int n)` che restituisce `true` se il numero è primo. Usalo per stampare i numeri primi tra 2 e 50.
+Crea `Ex07PrimeCheck.java` con un metodo `static boolean isPrimo(int n)` che restituisce `true` se il numero è primo. Usalo per stampare i numeri primi tra 2 e 50.
 
 ```
 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47
@@ -75,7 +75,7 @@ Crea `PrimeCheck.java` con un metodo `static boolean isPrimo(int n)` che restitu
 
 ### Esercizio 8 · Il miniconvertitore
 
-Crea `TimeFormatter.java` con un metodo `static String formattaTempo(int totaleSecondi)` che restituisce una stringa nel formato `"Xh Ym Zs"`. Un secondo metodo `static int tempoInSecondi(int ore, int minuti, int secondi)` fa la conversione inversa.
+Crea `Ex08TimeFormatter.java` con un metodo `static String formattaTempo(int totaleSecondi)` che restituisce una stringa nel formato `"Xh Ym Zs"`. Un secondo metodo `static int tempoInSecondi(int ore, int minuti, int secondi)` fa la conversione inversa.
 
 ```
 10000 secondi = 2h 46m 40s
@@ -84,16 +84,16 @@ Crea `TimeFormatter.java` con un metodo `static String formattaTempo(int totaleS
 
 ### Esercizio 9 · Il fattoriale
 
-Crea `Factorial.java` con un metodo `static long fattoriale(int n)` che calcola il fattoriale con un ciclo.
+Crea `Ex09Factorial.java` con un metodo `static long fattoriale(int n)` che calcola il fattoriale con un ciclo.
 
 Stampa i risultati per n da 1 a 25. Per quale valore di n il risultato diventa negativo per la prima volta? Perché? I valori successivi sono corretti anche quando tornano positivi?
 
 ### Esercizio 10 · Caccia all'errore
 
-Copia questo codice in `FixMethods.java`. Non compila: correggilo leggendo i messaggi di javac, un errore alla volta.
+Copia questo codice in `Ex10FixMethods.java`. Non compila: correggilo leggendo i messaggi di javac, un errore alla volta.
 
 ```java
-public class FixMethods {
+public class Ex10FixMethods {
 
     static int doppio(int n) {
         n * 2;
@@ -119,10 +119,10 @@ public class FixMethods {
 
 ### Esercizio 11 · Refactoring
 
-Questo programma funziona ma ha codice ripetuto. Copia in `Refactor.java` e riscrivilo usando dei metodi.
+Questo programma funziona ma ha codice ripetuto. Copia in `Ex11Refactor.java` e riscrivilo usando dei metodi.
 
 ```java
-public class Refactor {
+public class Ex11Refactor {
     public static void main(String[] args) {
         int a = 7, b = 3, c = 12;
 

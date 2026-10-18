@@ -8,7 +8,7 @@ Lavora da terminale con `javac` e `java`, nella forma classica: una classe con `
 
 ### Esercizio 1 · Scheda personale
 
-Crea `PersonalCard.java`. Dichiara una variabile per ciascun dato, scegliendo il tipo più adatto:
+Crea `Ex01PersonalCard.java`. Dichiara una variabile per ciascun dato, scegliendo il tipo più adatto:
 - nome (testo);
 - iniziale del cognome (un solo carattere);
 - età (numero intero);
@@ -31,7 +31,7 @@ Poi prova a riassegnare `ANNO_CORRENTE` e a mettere un numero nella variabile de
 
 ### Esercizio 2 · Scambio di variabili
 
-Crea `Swap.java`. Con `int a = 5;` e `int b = 8;`, scambia i valori delle due variabili e stampali prima e dopo.
+Crea `Ex02Swap.java`. Con `int a = 5;` e `int b = 8;`, scambia i valori delle due variabili e stampali prima e dopo.
 
 ```
 Prima: a = 5, b = 8
@@ -42,7 +42,7 @@ Dopo:  a = 8, b = 5
 
 ### Esercizio 3 · La media dei voti
 
-Crea `Average.java`. Con tre voti interi, 7, 8 e 8, calcola la media e salvala in un `double`.
+Crea `Ex03Average.java`. Con tre voti interi, 7, 8 e 8, calcola la media e salvala in un `double`.
 
 ```
 Media: 7.666666666666667
@@ -53,7 +53,7 @@ Se ottieni `7.0`, cerca il motivo. Per arrotondare a un decimale usa `Math.round
 
 ### Esercizio 4 · Le iniziali
 
-Crea `Initials.java` con due variabili `char`, `'M'` e `'R'`. Prima di eseguire, prevedi cosa stampano queste tre righe:
+Crea `Ex04Initials.java` con due variabili `char`, `'M'` e `'R'`. Prima di eseguire, prevedi cosa stampano queste tre righe:
 
 ```java
 System.out.println(nome + cognome);
@@ -67,7 +67,7 @@ System.out.println("" + nome + cognome);
 
 ### Esercizio 5 · Da secondi a ore, minuti e secondi
 
-Crea `TimeConverter.java`. Data la variabile `int totaleSecondi = 10000;`, calcola ore, minuti e secondi usando solo `/` e `%`.
+Crea `Ex05TimeConverter.java`. Data la variabile `int totaleSecondi = 10000;`, calcola ore, minuti e secondi usando solo `/` e `%`.
 
 ```
 10000 secondi = 2 ore, 46 minuti e 40 secondi
@@ -75,7 +75,7 @@ Crea `TimeConverter.java`. Data la variabile `int totaleSecondi = 10000;`, calco
 
 ### Esercizio 6 · Celsius e Fahrenheit
 
-Crea `TemperatureConverter.java`. La formula è `F = C × 9 / 5 + 32`. Con `int celsius = 25;` calcola i gradi Fahrenheit in tre modi e salva ogni risultato in un `double`:
+Crea `Ex06TemperatureConverter.java`. La formula è `F = C × 9 / 5 + 32`. Con `int celsius = 25;` calcola i gradi Fahrenheit in tre modi e salva ogni risultato in un `double`:
 
 ```java
 celsius * (9 / 5) + 32
@@ -89,7 +89,7 @@ Prima di eseguire, scrivi su un foglio i tre risultati che ti aspetti. Poi esegu
 
 ### Esercizio 7 · Lo scontrino
 
-Crea `ShoppingReceipt.java`. Il carrello contiene:
+Crea `Ex07ShoppingReceipt.java`. Il carrello contiene:
 
 | Articolo | Prezzo | Quantità |
 |---|---|---|
@@ -110,7 +110,7 @@ Da pagare: 15.22 euro
 
 ### Esercizio 8 · Divisibilità e anni bisestili
 
-Crea `LeapYear.java`. Un anno è bisestile se è divisibile per 4 ma non per 100, oppure se è divisibile per 400. Scrivi la condizione con `%`, `==`, `!=`, `&&` e `||`, e salva il risultato in un `boolean` per gli anni 2024, 1900, 2000 e 2026.
+Crea `Ex08LeapYear.java`. Un anno è bisestile se è divisibile per 4 ma non per 100, oppure se è divisibile per 400. Scrivi la condizione con `%`, `==`, `!=`, `&&` e `||`, e salva il risultato in un `boolean` per gli anni 2024, 1900, 2000 e 2026.
 
 ```
 2024 bisestile: true
@@ -121,7 +121,7 @@ Crea `LeapYear.java`. Un anno è bisestile se è divisibile per 4 ma non per 100
 
 ### Esercizio 9 · Cosa stampa?
 
-Senza eseguire, scrivi su un foglio cosa stampa ciascuna riga. Poi copia il codice in `PredictTheOutput.java`, esegui e confronta. Per ogni risposta sbagliata, spiega il motivo.
+Senza eseguire, scrivi su un foglio cosa stampa ciascuna riga. Poi copia il codice in `Ex09PredictTheOutput.java`, esegui e confronta. Per ogni risposta sbagliata, spiega il motivo.
 
 ```java
 int x = 10;
@@ -144,7 +144,7 @@ System.out.println(0.1 + 0.2 == 0.3);           // 11
 
 ### Esercizio 10 · La somma delle cifre
 
-Crea `DigitSum.java`. Dato `int numero = 4827;`, ricava le quattro cifre usando solo `/` e `%`, poi calcolane la somma.
+Crea `Ex10DigitSum.java`. Dato `int numero = 4827;`, ricava le quattro cifre usando solo `/` e `%`, poi calcolane la somma.
 
 ```
 Cifre: 4 8 2 7
@@ -153,7 +153,7 @@ Somma delle cifre: 21
 
 ### Esercizio 11 · Il resto in monete
 
-Crea `Coins.java`. Un distributore deve dare un resto di 476 centesimi con il minor numero di monete: 2 €, 1 €, 50, 20, 10, 5, 2 e 1 centesimo. Calcola quante monete di ogni tipo servono.
+Crea `Ex11Coins.java`. Un distributore deve dare un resto di 476 centesimi con il minor numero di monete: 2 €, 1 €, 50, 20, 10, 5, 2 e 1 centesimo. Calcola quante monete di ogni tipo servono.
 
 ```
 2 euro: 2
@@ -170,10 +170,10 @@ Crea `Coins.java`. Un distributore deve dare un resto di 476 centesimi con il mi
 
 ### Esercizio 12 · Caccia all'errore
 
-Copia questo codice in `FixTheErrors.java`. Non compila: correggilo leggendo i messaggi di javac, un errore alla volta. Attenzione: c'è anche un errore che il compilatore non vede, perché il codice è valido ma il risultato è sbagliato.
+Copia questo codice in `Ex12FixTheErrors.java`. Non compila: correggilo leggendo i messaggi di javac, un errore alla volta. Attenzione: c'è anche un errore che il compilatore non vede, perché il codice è valido ma il risultato è sbagliato.
 
 ```java
-public class FixTheErrors {
+public class Ex12FixTheErrors {
     public static void main(String[] args) {
         long popolazione = 3000000000;
         float prezzo = 19.99;
@@ -197,7 +197,7 @@ Il programma corretto stampa la media giusta, 7.5. Il punteggio, `MASSIMO + 10`,
 
 ### Esercizio 13 · Numeri grandi e overflow
 
-Crea `BigNumbers.java` e calcola:
+Crea `Ex13BigNumbers.java` e calcola:
 1. i secondi in 100 anni (365 giorni l'anno), prima in un `int` e poi in un `long`;
 2. i millisecondi in un anno, salvati in un `long`:
 
