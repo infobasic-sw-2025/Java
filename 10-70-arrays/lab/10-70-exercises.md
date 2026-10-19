@@ -1,10 +1,8 @@
 # 10.70 Laboratorio · Array
 
-Ogni esercizio è un file con la sua classe e il suo `main`. Gli array si scrivono direttamente nel codice con le graffe, salvo dove è richiesto lo Scanner. Per usare `Arrays.toString` serve `import java.util.Arrays;` in cima al file.
+Nota: per usare `Arrays.toString` serve `import java.util.Arrays;` in cima al file.
 
 ---
-
-## Livello 1 · Base
 
 ### Esercizio 1 · Somma degli elementi
 
@@ -48,10 +46,6 @@ Con l'array `{7, 5, 8, 4, 9, 6, 3}`:
 Media: 6.0
 Sufficienti: 4 su 7
 ```
-
----
-
-## Livello 2 · Intermedio
 
 ### Esercizio 5 · Inversione dell'array
 
@@ -102,10 +96,6 @@ Elementi duplicati: 1 3
 
 Suggerimento: per ogni elemento controlla con un secondo ciclo se compare anche in una posizione successiva. Per non stamparlo due volte quando compare tre o più volte, controlla anche che non sia già comparso in una posizione precedente.
 
----
-
-## Livello 3 · Avanzato
-
 ### Esercizio 9 · Separa pari e dispari
 
 Crea `Ex09SplitEvenOdd.java`: crea un array di 10 numeri interi e produci due nuovi array, uno con i numeri pari e uno con i dispari. Ogni array deve avere esattamente la dimensione necessaria (niente celle vuote).
@@ -154,77 +144,3 @@ Diagonale secondaria: 4 + 7 + 10 + 13 = 34
 ```
 
 Suggerimento: sulla diagonale principale riga e colonna coincidono (`matrice[i][i]`); su quella secondaria la colonna è `n - 1 - i`.
-
-### Esercizio 12 · Battaglia navale
-
-Crea `Ex12Battleship.java`: una versione semplificata della battaglia navale.
-
-**Regole:**
-- Il campo di gioco è una griglia 5x5 rappresentata da un array 2D di `char`
-- Il computer piazza una nave lunga 3 celle, orizzontale o verticale, in una posizione casuale
-- Il giocatore non vede la nave e deve affondarla sparando colpi
-- A ogni turno il giocatore inserisce riga e colonna con lo Scanner
-- Se colpisce la nave stampa `Colpito!` e la cella diventa `X`; se manca stampa `Mancato!` e la cella diventa `O`
-- L'acqua non ancora esplorata si stampa come `~`
-- Se le coordinate sono fuori dalla griglia, o la cella è già stata colpita, il colpo non conta e si chiede di nuovo
-- Il gioco termina quando tutte e tre le celle della nave sono colpite, e stampa il numero di colpi
-
-Esempio di partita (la nave cambia a ogni esecuzione):
-
-```
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-
-Inserisci riga (0-4): 2
-Inserisci colonna (0-4): 3
-Colpito!
-
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ X ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-
-Inserisci riga (0-4): 0
-Inserisci colonna (0-4): 0
-Mancato!
-
-O ~ ~ ~ ~
-~ ~ ~ ~ ~
-~ ~ ~ X ~
-~ ~ ~ ~ ~
-~ ~ ~ ~ ~
-
-Inserisci riga (0-4): 7
-Inserisci colonna (0-4): 1
-Coordinate fuori dalla griglia, riprova
-
-Inserisci riga (0-4): 2
-Inserisci colonna (0-4): 3
-Hai già sparato qui, riprova
-
-...
-
-Inserisci riga (0-4): 4
-Inserisci colonna (0-4): 3
-Colpito!
-
-O O O O O
-O O O O O
-O O O X O
-O O O X O
-O O O X ~
-
-Nave affondata in 24 colpi!
-```
-
-**Suggerimenti:**
-- Usa un array `char[][] campo` per la griglia visibile al giocatore, riempito di `'~'` con due cicli
-- Usa un secondo array `char[][] navi` per memorizzare dove si trova la nave (`'N'`)
-- Per la posizione casuale usa `(int) (Math.random() * k)`, che dà un intero da 0 a `k - 1`. La nave deve stare tutta nella griglia: se è orizzontale la colonna di partenza va da 0 a 2, se è verticale la riga di partenza va da 0 a 2
-- Conta i colpi validi e quante celle della nave sono state colpite: il ciclo dei turni continua finché le celle colpite sono meno di 3
-- Controlla le coordinate prima di usarle come indici, altrimenti arriva un'`ArrayIndexOutOfBoundsException`
-- La stampa della griglia si ripete a ogni turno: conviene scriverla in un metodo `static void stampaCampo(char[][] campo)`
