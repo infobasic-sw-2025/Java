@@ -1,6 +1,6 @@
-# Laboratorio · Git e GitHub
+# Laboratorio · Git e GitHub (versione Java)
 
-Tutti gli esercizi si fanno dal terminale: Git Bash su Windows, il Terminale su macOS e Linux. Gli hash dei commit sono diversi per ognuno, perché dipendono anche da autore e data: negli output qui sotto contano i messaggi, non gli hash.
+Tutti gli esercizi si fanno dal terminale: Git Bash su Windows, il Terminale su macOS e Linux. I file Java si possono scrivere con IntelliJ o con qualsiasi editor, ma i comandi di Git si danno dal terminale. Gli hash dei commit sono diversi per ognuno, perché dipendono anche da autore e data: negli output qui sotto contano i messaggi, non gli hash.
 
 Prima e dopo ogni comando, `git status`.
 
@@ -26,22 +26,24 @@ pull.rebase=false
 
 Crea la cartella `calcolatrice`, entraci e trasformala in un repository. Poi salva tre commit, uno per ogni passo:
 
-1. `calcolatrice.js` con una funzione `somma` e un `console.log` che la usa → `feat: somma`
-2. una funzione `sottrazione` aggiunta in fondo allo stesso file → `feat: sottrazione`. Prima del commit guarda la modifica con `git diff`
+1. `Calcolatrice.java` con un metodo statico `somma` e un `main` che lo usa → `feat: somma`
+2. un metodo `sottrazione` aggiunto alla stessa classe, usato anche nel `main` → `feat: sottrazione`. Prima del commit guarda la modifica con `git diff`
 3. un file `README.md` con il titolo `# Calcolatrice` → `docs: README`
 
 ```
 $ git log --oneline
-051d709 docs: README
-bba9247 feat: sottrazione
-003c1a0 feat: somma
+ae1d4c0 docs: README
+d923b0e feat: sottrazione
+38469b6 feat: somma
 ```
 
-**Suggerimento:** `git add` prima di ogni `git commit`. Se `git commit` risponde `nothing added to commit`, manca proprio quello.
+**Suggerimenti:**
+- `git add` prima di ogni `git commit`. Se `git commit` risponde `nothing added to commit`, manca proprio quello
+- Prova il programma con `java Calcolatrice.java`: dal JDK 11 si può eseguire un file sorgente senza compilarlo prima con `javac`
 
 ### Esercizio 3 · Due modifiche, due commit
 
-Fai due modifiche insieme, senza committare in mezzo: aggiungi una funzione `prodotto` a `calcolatrice.js` e una riga di descrizione a `README.md`. Poi salvale in **due commit separati**: `feat: prodotto` con il solo `calcolatrice.js`, `docs: descrizione nel README` con il solo `README.md`.
+Fai due modifiche insieme, senza committare in mezzo: aggiungi un metodo `prodotto` a `Calcolatrice.java` e una riga di descrizione a `README.md`. Poi salvale in **due commit separati**: `feat: prodotto` con il solo `Calcolatrice.java`, `docs: descrizione nel README` con il solo `README.md`.
 
 Controlla che ogni commit contenga un solo file:
 
@@ -49,7 +51,7 @@ Controlla che ogni commit contenga un solo file:
 $ git show --stat HEAD~1
     feat: prodotto
 
- calcolatrice.js | 2 ++
+ Calcolatrice.java | 2 ++
  1 file changed, 2 insertions(+)
 ```
 
@@ -59,15 +61,15 @@ $ git show --stat HEAD~1
 
 Prova i quattro modi di rimediare a un errore:
 
-1. aggiungi una riga di prova a `calcolatrice.js`, poi buttala via senza toccare il file a mano;
+1. aggiungi una riga di prova a `Calcolatrice.java`, poi buttala via senza toccare il file a mano;
 2. crea `appunti.txt`, aggiungilo con `git add`, poi toglilo dalla staging area (il file deve restare sul disco);
-3. aggiungi una funzione `divisione` e committala con il messaggio sbagliato `feat: divsione`, poi correggi il messaggio;
+3. aggiungi un metodo `divisione` e committalo con il messaggio sbagliato `feat: divsione`, poi correggi il messaggio;
 4. annulla il commit della divisione con un nuovo commit.
 
 ```
 $ git log --oneline -2
-5fcb08f Revert "feat: divisione"
-cec21e4 feat: divisione
+9a7eb83 Revert "feat: divisione"
+958686d feat: divisione
 ```
 
 **Suggerimento:** i comandi sono nella tabella *Tornare indietro*. Dopo `--amend` l'hash dell'ultimo commit cambia: è un commit nuovo.
@@ -82,10 +84,10 @@ Con `git cat-file -p` leggi l'ultimo commit, il suo tree e il contenuto di `READ
 
 ```
 $ git log --format="%h  parent: %p  %s"
-5fcb08f  parent: cec21e4  Revert "feat: divisione"
-cec21e4  parent: 640eb15  feat: divisione
+9a7eb83  parent: 958686d  Revert "feat: divisione"
+958686d  parent: 2f35944  feat: divisione
 ...
-003c1a0  parent:   feat: somma
+38469b6  parent:   feat: somma
 ```
 
 Disegna su un foglio la catena, con le frecce dal figlio al parent, e rispondi:
@@ -98,7 +100,7 @@ Disegna su un foglio la catena, con le frecce dal figlio al parent, e rispondi:
 
 ### Esercizio 6 · .gitignore
 
-Installa `prompt-sync` nel progetto con `npm install prompt-sync` e guarda `git status`: compare `node_modules/`. Crea un `.gitignore` che lo escluda e committa `.gitignore`, `package.json` e `package-lock.json` con `chore: prompt-sync e .gitignore`.
+Compila il programma con `javac Calcolatrice.java` e guarda `git status`: compare `Calcolatrice.class`. Crea un `.gitignore` che escluda tutti i file `.class` e la cartella `out/`, poi committalo con `chore: .gitignore per i file compilati`.
 
 ```
 $ git status
@@ -106,11 +108,13 @@ On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	.gitignore
-	package-lock.json
-	package.json
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-**Suggerimento:** `package.json` e `package-lock.json` vanno committati, perché dicono quali pacchetti installare; `node_modules` si ricrea con `npm install`.
+**Suggerimenti:**
+- `*.class` vale per tutti i file con quell'estensione. I `.class` non si committano: si ricreano con `javac` a partire dai `.java`
+- `out/` è la cartella in cui compila IntelliJ: anche quella non va su GitHub
 
 ---
 
@@ -124,7 +128,7 @@ Poi clona il repository in una seconda cartella, `calcolatrice-copia`, come fare
 
 ```
 $ git pull
-Updating 7985586..f39bfcd
+Updating 95f9d42..d0ecaef
 Fast-forward
  README.md | 1 +
  1 file changed, 1 insertion(+)
@@ -136,19 +140,19 @@ Fast-forward
 
 Simula due persone che lavorano insieme:
 
-1. nella copia aggiungi una funzione `potenza`, committa con `feat: potenza` e fai push;
-2. nell'originale, **senza fare pull**, aggiungi al README l'elenco delle funzioni, committa con `docs: elenco delle funzioni` e prova a fare push.
+1. nella copia aggiungi un metodo `potenza`, committa con `feat: potenza` e fai push;
+2. nell'originale, **senza fare pull**, aggiungi al README l'elenco dei metodi, committa con `docs: elenco dei metodi` e prova a fare push.
 
 Il push viene rifiutato. Risolvi e pubblica, poi guarda la storia:
 
 ```
 $ git log --oneline --graph -4
-*   0fdac07 Merge branch 'main' of https://github.com/mariorossi/calcolatrice
+*   767926c Merge branch 'main' of https://github.com/mariorossi/calcolatrice
 |\
-| * 5c97dca feat: potenza
-* | 916818f docs: elenco delle funzioni
+| * 7c9ae92 feat: potenza
+* | 75dce58 docs: elenco dei metodi
 |/
-* f39bfcd docs: come si esegue
+* d0ecaef docs: come si esegue
 ```
 
 **Suggerimento:** leggi l'ultima riga di `hint` del messaggio di errore. Non usare mai `git push --force`: cancellerebbe il commit dell'altra copia.
@@ -159,15 +163,15 @@ $ git log --oneline --graph -4
 
 ### Esercizio 9 · Branch e merge
 
-Crea il branch `modulo` e spostati lì. Crea `modulo.js` con una funzione `modulo` e committa con `feat: modulo`. Torna su `main` e controlla con `ls` che `modulo.js` non ci sia. Poi unisci il branch in `main`, cancellalo e fai push.
+Crea il branch `modulo` e spostati lì. Crea `Modulo.java`, una classe con un metodo statico `modulo` che restituisce il resto della divisione, e committa con `feat: modulo`. Torna su `main` e controlla con `ls` che `Modulo.java` non ci sia. Poi unisci il branch in `main`, cancellalo e fai push.
 
 ```
 $ git merge modulo
-Updating 0fdac07..1ae3fad
+Updating 767926c..25dca62
 Fast-forward
- modulo.js | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 modulo.js
+ Modulo.java | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Modulo.java
 ```
 
 **Suggerimento:** `git switch -c` crea il branch e ci si sposta in un colpo solo. Il merge è un *fast-forward* perché `main` non è andato avanti nel frattempo.
@@ -176,18 +180,18 @@ Fast-forward
 
 Provoca un conflitto e risolvilo:
 
-1. su `main` crea `messaggio.js` con `const MESSAGGIO = "Calcolatrice";` e committa;
-2. crea il branch `benvenuto` e cambia la riga in `"Benvenuto nella calcolatrice"`, poi committa;
+1. su `main` crea `Messaggio.java`, una classe con la costante `static final String MESSAGGIO = "Calcolatrice";`, e committa;
+2. crea il branch `benvenuto` e cambia il valore in `"Benvenuto nella calcolatrice"`, poi committa;
 3. torna su `main`, cambia la stessa riga in `"Calcolatrice 1.0"` e committa;
 4. unisci `benvenuto` in `main`.
 
 ```
 $ git merge benvenuto
-Auto-merging messaggio.js
-CONFLICT (content): Merge conflict in messaggio.js
+Auto-merging Messaggio.java
+CONFLICT (content): Merge conflict in Messaggio.java
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Apri `messaggio.js`, lascia una sola riga, `"Benvenuto nella calcolatrice 1.0"`, togli i marcatori e completa il merge. Fai push.
+Apri `Messaggio.java`, lascia una sola riga con `"Benvenuto nella calcolatrice 1.0"`, togli i marcatori e completa il merge. Fai push.
 
-**Suggerimento:** tra `<<<<<<<` e `=======` c'è la versione di `main`, tra `=======` e `>>>>>>>` quella di `benvenuto`. Dopo aver sistemato il file, `git add` e `git commit`. Se ti perdi, `git merge --abort` torna a prima del merge.
+**Suggerimento:** tra `<<<<<<<` e `=======` c'è la versione di `main`, tra `=======` e `>>>>>>>` quella di `benvenuto`. Le righe uguali nei due branch, come `public class Messaggio {`, restano fuori dai marcatori. Dopo aver sistemato il file, `git add` e `git commit`. Se ti perdi, `git merge --abort` torna a prima del merge.
