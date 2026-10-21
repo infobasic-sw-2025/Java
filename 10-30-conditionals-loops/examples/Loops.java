@@ -7,15 +7,6 @@ public class Loops {
             System.out.println(n);
             n--;
         }
-        System.out.println("Via!");
-
-        // Un while che gira finché la condizione resta vera: qui la rendiamo falsa al primo giro
-        boolean loopCondition = true;
-        while (loopCondition) {
-            System.out.println("Giro del ciclo");
-            loopCondition = false;   // senza questa riga sarebbe un loop infinito
-        }
-        System.out.println("Sono uscito dal ciclo");
 
         // Stampiamo n anche se la condizione è già falsa: il corpo si esegue almeno una volta
         n = 10;
@@ -38,13 +29,6 @@ public class Loops {
             if (i % 2 == 0) pari++;
         }
         System.out.println("Somma: " + somma + ", pari: " + pari);
-
-        // Cicli annidati: per ogni giro di i, j fa tutti i suoi giri
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.println("Indice [" + i + "][" + j + "], somma: " + (i + j));
-            }
-        }
 
         // Stampiamo una tabellina 3×4
         for (int riga = 1; riga <= 3; riga++) {

@@ -1,4 +1,4 @@
-// Metodi void e con ritorno
+// 1/2 · Metodi void e con ritorno
 public class Methods {
     public static void main(String[] args) {
         // Stampiamo un separatore tre volte senza ripetere il codice
