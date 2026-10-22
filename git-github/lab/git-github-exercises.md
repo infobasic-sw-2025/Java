@@ -133,7 +133,17 @@ GitHub non accetta la password dell'account per `git push`: dal terminale serve 
 
 Il token vale come la password: non metterlo in un file del repository e non mandarlo a nessuno.
 
-**2. Usalo al primo push.** Quando Git chiede le credenziali, scrivi il tuo username di GitHub e incolla il token al posto della password. Mentre lo incolli non compare niente: è normale.
+**2. Configura il sistema che lo conserva.** Prima del push, di' a Git dove salvare il token, con il comando del tuo sistema: è un'impostazione `--global`, vale per tutti i repository.
+
+| Sistema | Comando | Dove finisce il token |
+|---|---|---|
+| Windows | `git config --global credential.helper manager` | Gestione credenziali di Windows (Git Credential Manager, incluso in Git for Windows) |
+| macOS | `git config --global credential.helper osxkeychain` | Portachiavi |
+| Linux | `git config --global credential.helper store` | file `~/.git-credentials`, in chiaro |
+
+Controlla con `git config --get-all credential.helper`: deve comparire il nome che hai impostato.
+
+**3. Fai il primo push.** Quando Git chiede le credenziali, scrivi il tuo username di GitHub e incolla il token al posto della password. Mentre lo incolli non compare niente: è normale. Git lo salva nel sistema e dal push successivo non lo chiede più.
 
 ```
 $ git push -u origin main
@@ -143,15 +153,7 @@ Password for 'https://mariorossi@github.com':
 
 Su Windows, al posto di queste due righe si apre la finestra di Git Credential Manager: accedi dal browser oppure incolla il token.
 
-**3. Salvalo nel sistema.** Così Git non lo chiede più a ogni push:
-
-| Sistema | Dove finisce il token | Cosa fare |
-|---|---|---|
-| Windows | Gestione credenziali di Windows | niente: Git Credential Manager è incluso in Git for Windows |
-| macOS | Portachiavi | di solito niente; se a ogni push lo richiede, `git config --global credential.helper osxkeychain` |
-| Linux | file `~/.git-credentials`, in chiaro | `git config --global credential.helper store` |
-
-Per controllare quale sistema usa Git: `git config --get-all credential.helper`.
+Per vedere che è salvato: su macOS apri **Accesso Portachiavi** e cerca `github.com`; su Windows apri **Gestione credenziali** → **Credenziali di Windows** e cerca `git:https://github.com`.
 
 **Se il push dà `Authentication failed`**, di solito il token è scaduto o non ha lo scope `repo`. Crea un token nuovo, poi cancella quello salvato e rifai il push, che lo chiederà di nuovo:
 
