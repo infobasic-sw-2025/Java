@@ -120,6 +120,47 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ## Livello 3 · GitHub
 
+### Prima di cominciare · Accesso a GitHub dal terminale
+
+GitHub non accetta la password dell'account per `git push`: dal terminale serve un **personal access token**, una chiave da usare al posto della password.
+
+**1. Crea il token.** Su GitHub: foto del profilo → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)** → **Generate new token** → **Generate new token (classic)**. Poi:
+
+- **Note:** un nome che ricordi a cosa serve, per esempio `pc-aula`;
+- **Expiration:** una scadenza, per esempio 90 giorni;
+- **Scopes:** spunta **repo**, che basta per fare push sui tuoi repository;
+- **Generate token**, e copia subito il token (inizia con `ghp_`): GitHub non te lo mostrerà più.
+
+Il token vale come la password: non metterlo in un file del repository e non mandarlo a nessuno.
+
+**2. Usalo al primo push.** Quando Git chiede le credenziali, scrivi il tuo username di GitHub e incolla il token al posto della password. Mentre lo incolli non compare niente: è normale.
+
+```
+$ git push -u origin main
+Username for 'https://github.com': mariorossi
+Password for 'https://mariorossi@github.com':
+```
+
+Su Windows, al posto di queste due righe si apre la finestra di Git Credential Manager: accedi dal browser oppure incolla il token.
+
+**3. Salvalo nel sistema.** Così Git non lo chiede più a ogni push:
+
+| Sistema | Dove finisce il token | Cosa fare |
+|---|---|---|
+| Windows | Gestione credenziali di Windows | niente: Git Credential Manager è incluso in Git for Windows |
+| macOS | Portachiavi | di solito niente; se a ogni push lo richiede, `git config --global credential.helper osxkeychain` |
+| Linux | file `~/.git-credentials`, in chiaro | `git config --global credential.helper store` |
+
+Per controllare quale sistema usa Git: `git config --get-all credential.helper`.
+
+**Se il push dà `Authentication failed`**, di solito il token è scaduto o non ha lo scope `repo`. Crea un token nuovo, poi cancella quello salvato e rifai il push, che lo chiederà di nuovo:
+
+```
+$ printf "protocol=https\nhost=github.com\n\n" | git credential reject
+```
+
+Su Windows si può anche cancellarlo a mano: Pannello di controllo → Gestione credenziali → Credenziali di Windows → `git:https://github.com` → Rimuovi.
+
 ### Esercizio 7 · Pubblicare e clonare
 
 Crea su GitHub un repository **vuoto** chiamato `calcolatrice`, senza README. Collegalo come `origin` e fai il primo push. Controlla sul sito che ci siano tutti i commit.
@@ -134,7 +175,7 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
-**Suggerimento:** al primo push GitHub chiede di accedere dal browser (Windows) o con `gh auth login` (macOS e Linux): la password dell'account non funziona. Con `-u` nel primo push, dopo basta `git push`.
+**Suggerimento:** al primo push serve il token creato prima di cominciare il Livello 3: la password dell'account non funziona. Con `-u` nel primo push, dopo basta `git push`.
 
 ### Esercizio 8 · Push rifiutato
 
