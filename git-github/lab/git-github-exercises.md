@@ -143,19 +143,24 @@ Il token vale come la password: non metterlo in un file del repository e non man
 
 Controlla con `git config --get-all credential.helper`: deve comparire il nome che hai impostato.
 
-**3. Fai il primo push.** Quando Git chiede le credenziali, scrivi il tuo username di GitHub e incolla il token al posto della password. Mentre lo incolli non compare niente: è normale. Git lo salva nel sistema e dal push successivo non lo chiede più.
+**3. Salva il token nel sistema.** Scrivi `git credential approve` e premi Invio: il terminale aspetta. Scrivi queste quattro righe, con il tuo username e il tuo token, poi premi Invio su una riga vuota:
 
 ```
-$ git push -u origin main
-Username for 'https://github.com': mariorossi
-Password for 'https://mariorossi@github.com':
+$ git credential approve
+protocol=https
+host=github.com
+username=mariorossi
+password=ghp_il-tuo-token
+
 ```
 
-Su Windows, al posto di queste due righe si apre la finestra di Git Credential Manager: accedi dal browser oppure incolla il token.
+Git non risponde niente: il token è salvato nel sistema scelto al passo 2. Le righe non finiscono nella cronologia del terminale, ma restano sullo schermo: dopo, `clear`.
 
 Per vedere che è salvato: su macOS apri **Accesso Portachiavi** e cerca `github.com`; su Windows apri **Gestione credenziali** → **Credenziali di Windows** e cerca `git:https://github.com`.
 
-**Se il push dà `Authentication failed`**, di solito il token è scaduto o non ha lo scope `repo`. Crea un token nuovo, poi cancella quello salvato e rifai il push, che lo chiederà di nuovo:
+**4. Fai il primo push.** `git push -u origin main` non chiede più niente: Git prende il token dal sistema. Se salti il passo 3, Git chiede username e password al primo push: scrivi lo username e incolla il token al posto della password (mentre lo incolli non compare niente). Su Windows si apre invece la finestra di Git Credential Manager.
+
+**Se il push dà `Authentication failed`**, di solito il token è scaduto o non ha lo scope `repo`. Crea un token nuovo, cancella quello salvato e salva il nuovo come al passo 3:
 
 ```
 $ printf "protocol=https\nhost=github.com\n\n" | git credential reject
