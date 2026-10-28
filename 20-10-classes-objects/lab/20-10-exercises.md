@@ -10,12 +10,12 @@ La lampadina può essere in uno dei seguenti stati: `ACCESA`, `SPENTA` o `ROTTA`
 
 La classe deve contenere:
 - i campi necessari a descriverne lo stato e il numero di azionamenti effettuati
-- un costruttore che riceve il numero massimo di azionamenti prima che la lampadina si rompa
+- un costruttore che riceve il numero massimo di azionamenti; la lampadina parte `SPENTA`
 - un metodo `getStato()` che restituisce lo stato corrente come stringa
 - un metodo `aziona()` che cambia lo stato della lampadina:
   - da accesa a spenta
   - da spenta ad accesa
-  - se si raggiunge il limite massimo di azionamenti, lo stato diventa `ROTTA` e non cambia più
+  - l'azionamento che raggiunge il massimo rompe la lampadina: con massimo 4, al 4° azionamento lo stato diventa `ROTTA` e da lì non cambia più
 
 Scrivere una classe `Main` di test che crei una lampadina con massimo 4 azionamenti e la azioni ripetutamente, stampando lo stato a ogni passaggio.
 
@@ -83,7 +83,7 @@ Creare una classe `Biblioteca` con:
 - campo privato: array di `Libro` (dimensione fissa)
 - campo privato: `numLibri` (int, quanti libri sono stati aggiunti)
 - costruttore che riceve la capienza massima
-- metodo `aggiungi(Libro libro)` — aggiunge un libro se c'è spazio
+- metodo `aggiungi(Libro libro)` — aggiunge un libro se c'è spazio; restituisce `true` se l'ha aggiunto, `false` se la biblioteca è piena
 - metodo `cercaPerTitolo(String titolo)` — restituisce il libro con quel titolo, o `null` se non trovato
 - metodo `stampaDisponibili()` — stampa solo i libri disponibili
 
@@ -94,8 +94,8 @@ Nella classe `Main` creare una biblioteca con 10 posti, aggiungere 5 libri, pres
 Creare una classe `StudenteVoti` con:
 - campi privati: `nome` (String), `voti` (array di int), `numVoti` (int)
 - costruttore che riceve il nome e il numero massimo di voti
-- metodo `aggiungiVoto(int voto)` — aggiunge un voto (tra 18 e 30) se c'è spazio
-- metodo `calcolaMedia()` — restituisce la media dei voti inseriti
+- metodo `aggiungiVoto(int voto)` — aggiunge un voto (tra 18 e 30) se c'è spazio; restituisce `true` se l'ha aggiunto
+- metodo `calcolaMedia()` — restituisce la media dei voti inseriti (0 se non ci sono voti, come massimo e minimo)
 - metodo `getVotoMassimo()` — restituisce il voto più alto
 - metodo `getVotoMinimo()` — restituisce il voto più basso
 - `toString()` che mostra nome, numero di voti e media
@@ -108,7 +108,7 @@ Creare una classe `Cronometro` con:
 - campi privati: `tempoInizio` (long), `tempoFine` (long), `inCorso` (boolean)
 - metodo `avvia()` — registra il tempo di inizio con `System.currentTimeMillis()`
 - metodo `ferma()` — registra il tempo di fine
-- metodo `getDurataMillis()` — restituisce la durata in millisecondi
+- metodo `getDurataMillis()` — restituisce la durata in millisecondi; se il cronometro è ancora in corso, il tempo trascorso fino a ora
 - metodo `getDurataSecondi()` — restituisce la durata in secondi (double)
 - `toString()` che mostra la durata in formato leggibile
 
@@ -136,10 +136,10 @@ Nella classe `Main`:
 Creare una classe `Registro` che gestisca un elenco di studenti (riutilizzare la classe `StudenteVoti` dell'esercizio 7):
 - campo privato: array di `StudenteVoti`, `numStudenti`
 - costruttore che riceve la capienza massima
-- metodo `iscrivi(StudenteVoti studente)` — aggiunge uno studente se c'è spazio
+- metodo `iscrivi(StudenteVoti studente)` — aggiunge uno studente se c'è spazio; restituisce `true` se l'ha aggiunto
 - metodo `cercaPerNome(String nome)` — restituisce lo studente con quel nome, o `null`
-- metodo `getMediaClasse()` — restituisce la media delle medie di tutti gli studenti
-- metodo `getMigliore()` — restituisce lo studente con la media più alta
+- metodo `getMediaClasse()` — restituisce la media delle medie di tutti gli studenti (0 se il registro è vuoto)
+- metodo `getMigliore()` — restituisce lo studente con la media più alta (`null` se il registro è vuoto)
 - metodo `stampaPagella()` — stampa nome e media di ogni studente
 
 Nella classe `Main` creare un registro con 5 posti, iscrivere 4 studenti con voti diversi, e stampare la pagella con la media della classe.
@@ -154,9 +154,10 @@ Creare una classe `Prodotto` con:
 
 Creare una classe `Distributore` con:
 - campo privato: array di `Prodotto` (dimensione fissa)
+- costruttore che riceve il numero di posizioni
 - metodo `carica(int posizione, Prodotto prodotto)` — inserisce un prodotto nella posizione indicata
 - metodo `mostraProdotti()` — stampa tutti i prodotti con la loro posizione
-- metodo `acquista(int posizione, double denaro)` — vende il prodotto alla posizione indicata se disponibile e se il denaro è sufficiente; restituisce il resto
+- metodo `acquista(int posizione, double denaro)` — vende il prodotto alla posizione indicata se disponibile e se il denaro è sufficiente; restituisce il resto. Se l'acquisto non è possibile (posizione vuota, prodotto esaurito, denaro insufficiente) restituisce tutto il denaro
 
 Nella classe `Main` creare un distributore con 5 posizioni, caricare prodotti, simulare alcuni acquisti.
 
@@ -169,11 +170,11 @@ Creare una classe `Canzone` con:
 Creare una classe `Playlist` con:
 - campi privati: `nome` (String), array di `Canzone`, `numCanzoni` (int)
 - costruttore che riceve il nome e la capienza massima
-- metodo `aggiungi(Canzone canzone)` — aggiunge una canzone se c'è spazio
-- metodo `rimuovi(String titolo)` — rimuove la canzone con quel titolo (spostando le successive)
+- metodo `aggiungi(Canzone canzone)` — aggiunge una canzone se c'è spazio; restituisce `true` se l'ha aggiunta
+- metodo `rimuovi(String titolo)` — rimuove la canzone con quel titolo (spostando le successive); restituisce `true` se l'ha trovata
 - metodo `getDurataTotale()` — restituisce la durata totale in secondi
 - metodo `getDurataTotaleFormattata()` — restituisce la durata in formato "Xm Ys"
-- metodo `cerca(String parola)` — restituisce un array con le canzoni il cui titolo contiene la parola
+- metodo `cerca(String parola)` — restituisce un array con le canzoni il cui titolo contiene la parola (vuoto se non ne trova)
 - `toString()` che mostra nome della playlist, numero di canzoni e durata totale
 
 Nella classe `Main` creare una playlist, aggiungere canzoni, cercare per parola chiave, rimuoverne una e stampare la durata totale.
