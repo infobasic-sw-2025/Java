@@ -9,7 +9,7 @@ class Main {
         System.out.println(l1);
 
         for (int i = 0; i < maxTentativi + 1; i++) {
-            System.out.println("Click numero: " + i);
+            System.out.println("Click numero: " + (i + 1));
             l1.aziona();
             System.out.println(l1);
             // System.out.println(l1.getStato());

@@ -15,7 +15,7 @@ public class Lampadina {
 
     public Lampadina(int maxAzionamenti) {
         this.maxAzionamenti = maxAzionamenti; // ricordate il this e cosa significa
-        this.azionamenti = 0; // this è superfluo perchè non ho nessuna var ambigua
+        this.azionamenti = 0; // this è superfluo perché non ho nessuna var ambigua
         this.stato = SPENTA;
     }
 
@@ -27,7 +27,7 @@ public class Lampadina {
         if (stato.equals(ROTTA)){
 
             // Uso System.out come log, idealmente dovrei usare un framework di logging
-            System.out.println("Lampadina già in stato " + ROTTA);
+            System.out.println("Lampadina già in stato: " + ROTTA);
             return;
         }
 
@@ -76,10 +76,11 @@ public class Lampadina {
         this.azionamenti = azionamenti;
     }
 
-    // l'equals serve a Java per capire quando due oggetti, che hanno indirizzi di memoria
-    // differenti, sono in realtà lo stesso oggetto. L'hashcode serve per capire su quali
-    // variabili di istanza fare l'hash dell'oggetto
-    // Di norma le variabili di equals sono le stesse dell'hashcode
+    // equals() dice quando due oggetti diversi (indirizzi di memoria differenti) sono
+    // equivalenti, cioè hanno gli stessi valori. Se sono lo stesso oggetto lo dice ==.
+    // hashCode() restituisce un numero calcolato dai campi: lo usano HashMap e HashSet.
+    // Regola: due oggetti uguali per equals() devono avere lo stesso hashCode(),
+    // per questo i due metodi usano gli stessi campi
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass())
